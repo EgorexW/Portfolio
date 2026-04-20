@@ -1,0 +1,4 @@
+# Rider / JetBrains IDE
+.idea/
+*.sln
+*.csproj
