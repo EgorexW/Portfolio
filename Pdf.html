@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiktor Olko - Portfolio</title>
-    <meta name="description" content="Wiktor Olko - Game Developer & Designer Portfolio. 6 years of experience in Unity, modding, and systems design.">
+    <meta name="description" content="Wiktor Olko - Game Developer & Designer Portfolio. 6 years of experience in Unity and modding.">
     <link rel="icon" href="https://itch.io/favicon.ico">
     <style>
         :root {
@@ -37,8 +37,19 @@
             background: var(--container-bg);
             padding: 40px;
             border-radius: 8px;
+            /* Subtelny cień, żeby odróżnić kontener od tła */
             box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
             border: 1px solid var(--border-color);
+        }
+
+        .top-banner {
+            background-color: #f3e5f5;
+            border-left: 4px solid var(--accent-color);
+            padding: 12px 20px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            color: var(--text-color);
         }
 
         h1 { color: var(--accent-color); font-size: 2.5em; margin-bottom: 5px; }
@@ -87,13 +98,6 @@
             gap: 20px;
             margin-top: 15px;
         }
-        
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
-        }
 
         .card {
             background: var(--card-bg);
@@ -108,22 +112,6 @@
         
         .highlight { color: var(--highlight); font-weight: bold; }
         .sub-text { font-size: 0.9em; color: var(--sub-text); font-style: italic; }
-        
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 6px;
-            margin-top: 10px;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
 
         .media-links ul {
             margin-top: 5px;
@@ -138,21 +126,8 @@
             border-left: 4px solid var(--accent-color);
         }
 
-        .itch-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .itch-item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
         /* --- OPTYMALIZACJA POD PDF / DRUK --- */
         @media print {
-            /* Wymusza drukowanie kolorów tła (bardzo ważne dla tagów i sekcji) */
             * {
                 -webkit-print-color-adjust: exact !important;
                 print-color-adjust: exact !important;
@@ -171,19 +146,17 @@
                 max-width: 100%;
             }
 
-            /* Zapobiega ucinaniu nagłówków i zawartości w połowie strony */
             h2, h3 {
                 page-break-after: avoid;
                 break-after: avoid;
             }
 
-            .card, .profile-summary, .skills-wrapper > div, .itch-item, .video-container, .folder-link, section {
+            .card, .profile-summary, .skills-wrapper > div, .folder-link, section {
                 page-break-inside: avoid;
                 break-inside: avoid;
                 margin-bottom: 20px;
             }
 
-            /* Dodaje lekki margines dla PDFa */
             @page {
                 margin: 1.5cm;
             }
@@ -194,10 +167,14 @@
 
 <div class="container">
 
+    <div class="top-banner">
+        💡 <strong>Highly Recommended:</strong> View the live, interactive version of this portfolio at <a href=https://egorexw.github.io/Portfolio/" target="_blank">https://egorexw.github.io/Portfolio/</a></span>
+    </div>
+
     <header>
         <h1>Wiktor Olko</h1>
         <div class="contact-info">
-            XXX XXX 105 | olko.wiktor.10@gmail.com <br>
+            +48 XXX XXX 105 | olko.wiktor.10@gmail.com <br>
             <div style="margin-top: 5px; font-size: 0.9em; color: var(--sub-text);">
                 <span style="margin-right: 15px;"><strong>GitHub:</strong> <a href="https://github.com/EgorexW" target="_blank">github.com/EgorexW</a></span>
                 <span style="margin-right: 15px;"><strong>Itch.io:</strong> <a href="https://egorexw.itch.io" target="_blank">egorexw.itch.io</a></span>
@@ -242,20 +219,16 @@
 
     <section>
         <h2>Media Showcase</h2>
-        <div class="video-grid">
+        <div class="grid">
             <div class="card">
                 <h3>Developer Q&A (Igrys Mod)</h3>
                 <p class="sub-text">In-depth community discussion on my mod's design.</p>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/n05HEERpNFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+                <p style="margin-top: 15px;">▶️ <a href="https://youtu.be/n05HEERpNFQ" target="_blank">Watch Q&A on YouTube</a></p>
             </div>
             <div class="card">
                 <h3>Indie Prototype Gameplay</h3>
                 <p class="sub-text">Core loop and mechanics in action.</p>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/N6FSlQzAE6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
+                <p style="margin-top: 15px;">▶️ <a href="https://youtu.be/N6FSlQzAE6M" target="_blank">Watch Gameplay on YouTube</a></p>
             </div>
         </div>
     </section>
@@ -264,25 +237,29 @@
         <h2>Games</h2>
         <p>A mix of long-term development projects and rapid prototypes created for global game jam competitions. <strong>The top 3 titles are playable directly in your browser!</strong></p>
 
-        <div class="itch-container">
-            <div class="itch-item">
-                <span class="sub-text">Overcooked meets 2D platformer</span>
-                <iframe frameborder="0" src="https://itch.io/embed/2560956?bg_color=9e2835&amp;fg_color=feffff&amp;link_color=ffe762&amp;border_color=ff5760" width="100%" height="167"><a href="https://egorexw.itch.io/baking">Devil's Kitchen Rush by egorexW</a></iframe>
+        <div class="grid">
+            <div class="card">
+                <h3>Devil's Kitchen Rush</h3>
+                <p class="sub-text">Overcooked meets 2D platformer</p>
+                <p style="margin-top: 15px;">🎮 <a href="https://egorexw.itch.io/baking" target="_blank">Play on itch.io in browser</a></p>
             </div>
 
-            <div class="itch-item">
-                <span class="sub-text">GMTK Game Jam 2023 (48h)</span>
-                <iframe frameborder="0" src="https://itch.io/embed/2156094?bg_color=2ce8f4&amp;fg_color=000000&amp;link_color=63c64d&amp;border_color=1ea5f7" width="100%" height="167"><a href="https://egorexw.itch.io/reverse-candy-crush">Crush Candy by egorexW</a></iframe>
+            <div class="card">
+                <h3>Crush Candy</h3>
+                <p class="sub-text">GMTK Game Jam 2023 (48h)</p>
+                <p style="margin-top: 15px;">🎮 <a href="https://egorexw.itch.io/reverse-candy-crush" target="_blank">Play on itch.io in browser</a></p>
             </div>
 
-            <div class="itch-item">
-                <span class="sub-text">Dynamic 2D platformer shooter</span>
-                <iframe frameborder="0" src="https://itch.io/embed/2241364?bg_color=ffffff&amp;fg_color=222222&amp;link_color=6600cc&amp;border_color=a0a0a0" width="100%" height="167"><a href="https://egorexw.itch.io/drawn-to-battle">Drawn to Battle by egorexW</a></iframe>
+            <div class="card">
+                <h3>Drawn to Battle</h3>
+                <p class="sub-text">Dynamic 2D platformer shooter</p>
+                <p style="margin-top: 15px;">🎮 <a href="https://egorexw.itch.io/drawn-to-battle" target="_blank">Play on itch.io in browser</a></p>
             </div>
 
-            <div class="itch-item">
-                <span class="sub-text">3D Environment Exploration</span>
-                <iframe frameborder="0" src="https://itch.io/embed/3922409?bg_color=afbfd2&amp;fg_color=222222&amp;link_color=fa5c5c&amp;border_color=6e86a0" width="100%" height="167"><a href="https://egorexw.itch.io/prison-escape">Prison Escape by egorexW</a></iframe>
+            <div class="card">
+                <h3>Prison Escape</h3>
+                <p class="sub-text">3D Environment Exploration</p>
+                <p style="margin-top: 15px;">🎮 <a href="https://egorexw.itch.io/prison-escape" target="_blank">View on itch.io</a></p>
             </div>
         </div>
 
