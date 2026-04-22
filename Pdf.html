@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiktor Olko - Portfolio</title>
+    <meta name="description" content="Wiktor Olko - Game Developer & Designer Portfolio. 6 years of experience in Unity, modding, and systems design.">
+    <link rel="icon" href="https://itch.io/favicon.ico">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --container-bg: #ffffff;
+            --text-color: #333333;
+            --heading-color: #6a1b9a;
+            --accent-color: #8e24aa;
+            --accent-hover: #ab47bc;
+            --border-color: #e0e0e0;
+            --card-bg: #ffffff;
+            --sub-text: #666666;
+            --skill-bg: #f5f5f5;
+            --skill-border: #8e24aa;
+            --highlight: #000000;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: var(--container-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+            border: 1px solid var(--border-color);
+        }
+
+        h1 { color: var(--accent-color); font-size: 2.5em; margin-bottom: 5px; }
+        h2 { color: var(--heading-color); border-bottom: 2px solid var(--border-color); padding-bottom: 5px; margin-top: 40px; }
+        h3 { margin-bottom: 5px; }
+        a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+        a:hover { text-decoration: underline; color: var(--accent-hover); }
+        
+        .contact-info { margin-bottom: 30px; font-size: 1.1em; color: var(--sub-text); border-bottom: 1px solid var(--border-color); padding-bottom: 20px;}
+        
+        .profile-summary {
+            font-size: 1.05em;
+            line-height: 1.7;
+            background: var(--skill-bg);
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .skills-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin-bottom: 0;
+        }
+        .skills-list li {
+            background: var(--skill-bg);
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            border-left: 3px solid var(--skill-border);
+            width: 100%;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .full-width-card {
+            grid-column: 1 / -1;
+        }
+        
+        .highlight { color: var(--highlight); font-weight: bold; }
+        .sub-text { font-size: 0.9em; color: var(--sub-text); font-style: italic; }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .media-links ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        
+        .folder-link {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: var(--skill-bg);
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .itch-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .itch-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        /* --- OPTYMALIZACJA POD PDF / DRUK --- */
+        @media print {
+            /* Wymusza drukowanie kolorów tła (bardzo ważne dla tagów i sekcji) */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            body {
+                background-color: #ffffff;
+                padding: 0;
+                margin: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                border: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            /* Zapobiega ucinaniu nagłówków i zawartości w połowie strony */
+            h2, h3 {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            .card, .profile-summary, .skills-wrapper > div, .itch-item, .video-container, .folder-link, section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                margin-bottom: 20px;
+            }
+
+            /* Dodaje lekki margines dla PDFa */
+            @page {
+                margin: 1.5cm;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Wiktor Olko</h1>
+        <div class="contact-info">
+            XXX XXX 105 | olko.wiktor.10@gmail.com <br>
+            <div style="margin-top: 5px; font-size: 0.9em; color: var(--sub-text);">
+                <span style="margin-right: 15px;"><strong>GitHub:</strong> <a href="https://github.com/EgorexW" target="_blank">github.com/EgorexW</a></span>
+                <span style="margin-right: 15px;"><strong>Itch.io:</strong> <a href="https://egorexw.itch.io" target="_blank">egorexw.itch.io</a></span>
+                <span><strong>Factorio:</strong> <a href="https://mods.factorio.com/user/egorexW" target="_blank">mods.factorio.com/user/egorexW</a></span>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h2 style="margin-top: 0;">About Me</h2>
+        <div class="profile-summary">
+            <p style="margin-top: 0;">I'm Wiktor, and I'm 18 years old. I've been realizing my passion for creating games and bringing ideas to life for nearly 6 years, though game mechanics and their inner works have interested me for as long as I can remember. I started by experimenting with Pygame in Python, but quickly moved into creating games in Unity, which has become the engine of my choice.</p>
+            <p>I love designing games, implementing my ideas, and seeing people have fun playing them. My portfolio is a mix of game jam projects and larger-scale games alongside my Factorio modification, which has reached over 20,000 downloads. I've also created two tabletop prototypes to explore game design in a physical format.</p>
+            <p style="margin-bottom: 0;">I feel confident in what I do because I genuinely love it. I am driven to build a future in the games industry, and I’m looking for an internship to face new challenges and gain professional knowledge from an experienced team.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Featured Project: Factorio Modding</h2>
+        <div class="card">
+            <h3>"Igrys" - Factorio Modification</h3>
+            <p class="sub-text">Lead Developer (Long-term project)</p>
+            <ul>
+                <li>Developed and maintained a complex mod with <span class="highlight">over 20,000 downloads</span>.</li>
+                <li>Collaborated with other developers on <strong>GitHub</strong>.</li>
+                <li>Maintained a immediate resolution cycle for all critical issues reported through the official factor portal.</li>
+                <li>All team communication entirely in <strong>English</strong>.</li>
+            </ul>
+
+            <div class="media-links" style="margin-top: 15px; background: var(--skill-bg); padding: 15px; border-radius: 6px;">
+                <p style="margin: 0;"><strong>Media Coverage:</strong></p>
+                <ul>
+                    <li><strong>Q&A:</strong> <a href="https://youtu.be/9rsFZTrs8sw?si=aIC_E84SWUEasYJM" target="_blank">Interview Part 2</a></li>
+                    <li><strong>Let's Plays:</strong> <a href="https://youtu.be/EmRZ9uIM-q4?si=gyccr5lG75-GFjvJ" target="_blank">Laurence Plays #1</a> | <a href="https://www.youtube.com/watch?v=-JCAvWgZF1o" target="_blank">Laurence Plays #2</a></li>
+                    <li><strong>Reviews:</strong> <a href="https://youtu.be/QcJtK2b0oiw?si=dvcltC_1cVcBeoi-" target="_blank">Factorio Mod Tips</a></li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 15px;">🔗 <a href="https://mods.factorio.com/mod/Igrys" target="_blank">View on Factorio Mod Portal</a></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Media Showcase</h2>
+        <div class="video-grid">
+            <div class="card">
+                <h3>Developer Q&A (Igrys Mod)</h3>
+                <p class="sub-text">In-depth community discussion on my mod's design.</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/n05HEERpNFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Indie Prototype Gameplay</h3>
+                <p class="sub-text">Core loop and mechanics in action.</p>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/N6FSlQzAE6M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Games</h2>
+        <p>A mix of long-term development projects and rapid prototypes created for global game jam competitions. <strong>The top 3 titles are playable directly in your browser!</strong></p>
+
+        <div class="itch-container">
+            <div class="itch-item">
+                <span class="sub-text">Overcooked meets 2D platformer</span>
+                <iframe frameborder="0" src="https://itch.io/embed/2560956?bg_color=9e2835&amp;fg_color=feffff&amp;link_color=ffe762&amp;border_color=ff5760" width="100%" height="167"><a href="https://egorexw.itch.io/baking">Devil's Kitchen Rush by egorexW</a></iframe>
+            </div>
+
+            <div class="itch-item">
+                <span class="sub-text">GMTK Game Jam 2023 (48h)</span>
+                <iframe frameborder="0" src="https://itch.io/embed/2156094?bg_color=2ce8f4&amp;fg_color=000000&amp;link_color=63c64d&amp;border_color=1ea5f7" width="100%" height="167"><a href="https://egorexw.itch.io/reverse-candy-crush">Crush Candy by egorexW</a></iframe>
+            </div>
+
+            <div class="itch-item">
+                <span class="sub-text">Dynamic 2D platformer shooter</span>
+                <iframe frameborder="0" src="https://itch.io/embed/2241364?bg_color=ffffff&amp;fg_color=222222&amp;link_color=6600cc&amp;border_color=a0a0a0" width="100%" height="167"><a href="https://egorexw.itch.io/drawn-to-battle">Drawn to Battle by egorexW</a></iframe>
+            </div>
+
+            <div class="itch-item">
+                <span class="sub-text">3D Environment Exploration</span>
+                <iframe frameborder="0" src="https://itch.io/embed/3922409?bg_color=afbfd2&amp;fg_color=222222&amp;link_color=fa5c5c&amp;border_color=6e86a0" width="100%" height="167"><a href="https://egorexw.itch.io/prison-escape">Prison Escape by egorexW</a></iframe>
+            </div>
+        </div>
+
+        <p style="margin-top: 15px; text-align: center;">🔗 <a href="https://egorexw.itch.io" target="_blank">View full itch.io Profile</a></p>
+    </section>
+
+    <section>
+        <h2>Core Skills</h2>
+
+        <div class="skills-wrapper">
+            <div>
+                <h3>Technical & Programming</h3>
+                <ul class="skills-list">
+                    <li>C# & Advanced Unity (10+ completed projects)</li>
+                    <li>Version Control (Git / GitHub)</li>
+                    <li><strong>Architecture:</strong> OOP, Interface-driven design</li>
+                    <li><strong>Frameworks:</strong> Custom Extension Methods & Unity utils</li>
+                    <li><strong>AI & Systems:</strong> Modular AI behaviors & Grid logic</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Game & System Design</h3>
+                <ul class="skills-list">
+                    <li>Mechanics Design & Systems Balancing</li>
+                    <li>UX Research & IRL Playtesting</li>
+                    <li>Bug Tracking (Community Forums)</li>
+                    <li>Tool-driven Prototyping (Spreadsheets, Nandeck)</li>
+                    <li>Long-term project management</li>
+                    <li>Technical Documentation (Rulebooks)</li>
+                    <li>English (Fluent communication & documentation)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Tabletop Design</h2>
+        <div class="folder-link">
+            <strong>📁 Tabletop Assets:</strong> <a href="https://drive.google.com/drive/folders/1hXJ9BMQfFbKPrcYtZvdTBJEP23TdNr2v?usp=sharing" target="_blank">View Google Drive Folder (Rulebooks, Google Spreadsheets & Printable Cards)</a>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h3>Survival Contest (Original Board Game)</h3>
+                <p class="sub-text">Asymmetrical Hidden Worker Placement</p>
+                <ul>
+                    <li>Designed an engaging core loop focused on resource management and survival under increasing daily pressure.</li>
+                    <li>Implemented a blind-bidding combat system to resolve conflicts over action spaces.</li>
+                    <li>Utilized <strong>Nandeck</strong> to rapidly generate printable cards from data spreadsheets.</li>
+                    <li>Organized IRL playtesting sessions to gather UX feedback and rebalance mechanics.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Phasmophobia (Tabletop Prototype)</h3>
+                <p class="sub-text">Mechanics Reverse-Engineering</p>
+                <ul>
+                    <li>Adapted core mechanics of the popular digital game into a functional tabletop prototype.</li>
+                    <li>Managed complex game data using organized <strong>Google Spreadsheets</strong>.</li>
+                    <li>Designed custom game boards and card layouts for physical testing.</li>
+                </ul>
+            </div>
+
+            <div class="card full-width-card">
+                <h3>Terrorscape: New Killer (Wizard)</h3>
+                <p class="sub-text">Asymmetrical Balance Design</p>
+                <ul>
+                    <li>Designed an unofficial expansion character (Wizard) for an existing asymmetrical game.</li>
+                    <li>Shared concepts with the BoardGameGeek community for feedback and balance critique.</li>
+                </ul>
+                <p>🔗 <a href="https://boardgamegeek.com/thread/3378202/wizard-new-killer-v10" target="_blank">Read the BGG Thread</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <p><strong>Akademickie Liceum Ogólnokształcące (ALO), Wrocław</strong><br>
+            <em>2022 - 2026</em></p>
+    </section>
+
+</div>
+
+</body>
+</html>
