@@ -149,6 +149,18 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
+            background: var(--skill-bg);
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+        .itch-details {
+            font-size: 0.95em;
+            margin-top: 10px;
+        }
+        .itch-details ul {
+            margin: 5px 0 0 0;
+            padding-left: 20px;
         }
     </style>
 </head>
@@ -184,9 +196,9 @@
             <p class="sub-text">Lead Developer (Long-term project)</p>
             <ul>
                 <li>Developed and maintained a complex mod with <span class="highlight">over 25,000 downloads</span>.</li>
-                <li>Collaborated with other developers on <strong>GitHub</strong>.</li>
+                <li>Collaborated with other developers on <strong>GitHub</strong>, communication entirely in <strong>English</strong>.</li>
                 <li>Maintained a immediate resolution cycle for all critical issues reported through the official factor portal.</li>
-                <li>All team communication entirely in <strong>English</strong>.</li>
+                <li>Developed in Lua using the Factorio Modding API by studying official documentation and reverse-engineering existing mods.</li>
             </ul>
 
             <div class="media-links" style="margin-top: 15px; background: var(--skill-bg); padding: 15px; border-radius: 6px;">
@@ -207,7 +219,7 @@
         <div class="video-grid">
             <div class="card">
                 <h3>Developer Q&A (Igrys Mod)</h3>
-                <p class="sub-text">In-depth community discussion on my mod's design.</p>
+                <p class="sub-text">In-depth discussion on my mod's design <strong> all in english!</strong></p>
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/n05HEERpNFQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
@@ -224,27 +236,66 @@
 
     <section>
         <h2>Games</h2>
-        <p>A mix of long-term development projects and rapid prototypes created for global game jam competitions. <strong>The top 3 titles are playable directly in your browser!</strong></p>
+        <p>A mix of long-term development projects and rapid prototypes created for global game jam competitions. <strong>The top 2 titles are playable directly in your browser!</strong></p>
 
         <div class="itch-container">
-            <div class="itch-item">
-                <span class="sub-text">Overcooked meets 2D platformer</span>
-                <iframe frameborder="0" src="https://itch.io/embed/2560956?bg_color=9e2835&amp;fg_color=feffff&amp;link_color=ffe762&amp;border_color=ff5760" width="100%" height="167"><a href="https://egorexw.itch.io/baking">Devil's Kitchen Rush by egorexW</a></iframe>
-            </div>
-            
+<!--            <div class="itch-item">-->
+<!--                <span class="sub-text">Overcooked meets 2D platformer</span>-->
+<!--                <iframe frameborder="0" src="https://itch.io/embed/2560956?bg_color=9e2835&amp;fg_color=feffff&amp;link_color=ffe762&amp;border_color=ff5760" width="100%" height="167"><a href="https://egorexw.itch.io/baking">Devil's Kitchen Rush by egorexW</a></iframe>-->
+<!--                <div class="itch-details">-->
+<!--                    <strong>Implementation & Design:</strong>-->
+<!--                    <ul>-->
+<!--                        <li>Explored 2D platformer level design.</li>-->
+<!--&lt;!&ndash;                        <li>Overcame UX hurdles by designing an intuitive system of icons above machines, clearly indicating required inputs and produced outputs to simplify gameplay understanding.</li>&ndash;&gt;-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
+
             <div class="itch-item">
                 <span class="sub-text">GMTK Game Jam 2023 (48h)</span>
                 <iframe frameborder="0" src="https://itch.io/embed/2156094?bg_color=2ce8f4&amp;fg_color=000000&amp;link_color=63c64d&amp;border_color=1ea5f7" width="100%" height="167"><a href="https://egorexw.itch.io/reverse-candy-crush">Crush Candy by egorexW</a></iframe>
+                <div class="itch-details">
+                    <ul>
+                        <li>A very quick prototype highlighting rapid development skills; I had extremely limited time to code because I was actively traveling on a trip during the jam.</li>
+                        <li>Required pivoting and altering the project scope on the fly to deliver a playable core mechanic within the strict time limits.</li>
+                    </ul>
+                </div>
             </div>
-            
+
             <div class="itch-item">
                 <span class="sub-text">Dynamic 2D platformer shooter</span>
                 <iframe frameborder="0" src="https://itch.io/embed/2241364?bg_color=ffffff&amp;fg_color=222222&amp;link_color=6600cc&amp;border_color=a0a0a0" width="100%" height="167"><a href="https://egorexw.itch.io/drawn-to-battle">Drawn to Battle by egorexW</a></iframe>
+                <div class="itch-details">
+                    <ul>
+                        <li>Implemented complex enemy design and AI pathfinding.</li>
+                        <li>Focused heavily on level design to accommodate and enhance combat.</li>
+                        <li>Designed dynamic arena battles and built the underlying systems required to control spawn pacing and combat flow.</li>
+                    </ul>
+                </div>
             </div>
 
             <div class="itch-item">
                 <span class="sub-text">3D Environment Exploration</span>
                 <iframe frameborder="0" src="https://itch.io/embed/3922409?bg_color=afbfd2&amp;fg_color=222222&amp;link_color=fa5c5c&amp;border_color=6e86a0" width="100%" height="167"><a href="https://egorexw.itch.io/prison-escape">Prison Escape by egorexW</a></iframe>
+                <div class="itch-details">
+                    <ul>
+                        <li>Programmed procedural level generation and refined 3D movement physics.</li>
+                        <li>Designed interactive, immersive-sim style systems that interact with one another naturally, granting players creative freedom to find their own solutions.</li>
+                        <li>Built flexible, modular systems beneath the hood to ease scaling and further development.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="itch-item">
+                <span class="sub-text">Stealth Speedrunning Game</span>
+                <iframe frameborder="0" src="https://itch.io/embed/1981001?bg_color=858585&amp;fg_color=000000&amp;link_color=e53b44&amp;border_color=6d6d6d" width="100%" height="167"><a href="https://egorexw.itch.io/the-quickest-heist-ever">The Quickest Heist Ever! by egorexW</a></iframe>
+                <div class="itch-details">
+                    <ul>
+                        <li>Developed enemy AI and behaviors using state machines, creating a flexible system where enemies can be dynamically interacted with and distracted.</li>
+                        <li>Designed levels featuring multiple paths and overlapping solutions, specifically tailored to make speedrunning fun and highly replayable.</li>
+                        <li>Explored and introduced distinct mechanics within each level to further enhance the possibilities for a creative approach to problem-solving.</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -258,11 +309,13 @@
             <div>
                 <h3>Technical & Programming</h3>
                 <ul class="skills-list">
-                    <li>C# & Advanced Unity (10+ completed projects)</li>
+                    <li>C# & Unity3D Engine (10+ completed projects)</li>
                     <li>Version Control (Git / GitHub)</li>
-                    <li><strong>Architecture:</strong> OOP, Interface-driven design</li>
+                    <li>Lua & Modding APIs</li>
+                    <li><strong>Architecture:</strong> OOP, Interface-driven design, Data-Driven logic</li>
                     <li><strong>Frameworks:</strong> Custom Extension Methods & Unity utils</li>
-                    <li><strong>AI & Systems:</strong> Modular AI behaviors & Grid logic</li>
+                    <li><strong>AI & Systems:</strong> Finite State Machines (FSM), Pathfinding, and Procedural Level Generation</li>
+                    <li>Basic Unreal Engine Know-How</li>
                 </ul>
             </div>
 
@@ -272,8 +325,8 @@
                     <li>Mechanics Design & Systems Balancing</li>
                     <li>UX Research & IRL Playtesting</li>
                     <li>Bug Tracking (Community Forums)</li>
-                    <li>Tool-driven Prototyping (Spreadsheets, Nandeck)</li>
-                    <li>Long-term project management</li>
+                    <li>Data-driven Prototyping (Spreadsheets, Nandeck)</li>
+                    <li>Long-term project management and rapid prototyping</li>
                     <li>Technical Documentation (Rulebooks)</li>
                     <li>English (Fluent communication & documentation)</li>
                 </ul>
