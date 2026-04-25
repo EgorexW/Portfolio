@@ -116,7 +116,13 @@
             h2 { margin-top: 15px; }
             @page { margin: 1cm; }
         }
+        
+        .my-phone::after {
+            content: "+48 XXX XXX 105";
+        }
+   
     </style>
+    <link rel="stylesheet" href="private.css">
 </head>
 <body>
 
@@ -129,7 +135,7 @@
     <header>
         <h1>Wiktor Olko</h1>
         <div class="contact-info">
-            +48 XXX XXX 105 | olko.wiktor.10@gmail.com <br>  
+            <span class="my-phone"></span> | olko.wiktor.10@gmail.com <br>  
             <div style="margin-top: 5px; font-size: 0.85em; color: var(--sub-text);">
                 <span style="margin-right: 15px;"><strong>GitHub:</strong> <a href="https://github.com/EgorexW" target="_blank">https://github.com/EgorexW</a></span>
                 <span style="margin-right: 15px;"><strong>Itch.io:</strong> <a href="https://egorexw.itch.io" target="_blank">https://egorexw.itch.io</a></span>
